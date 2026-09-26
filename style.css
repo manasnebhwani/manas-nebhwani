@@ -214,3 +214,1037 @@
 .mn-resume header{position:sticky;top:0}
 .mn-resume .hero{min-height:calc(100vh - 74px)}
 .mn-resume .nav-links{z-index:20}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN — MOBILE / TABLET / LAPTOP / DESKTOP
+   ========================================================= */
+
+/* Safe sizing and overflow handling */
+.mn-resume,
+.mn-resume *,
+.mn-resume *::before,
+.mn-resume *::after {
+  box-sizing: border-box;
+}
+
+.mn-resume {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.mn-resume img,
+.mn-resume svg,
+.mn-resume video,
+.mn-resume canvas,
+.mn-resume iframe {
+  max-width: 100%;
+}
+
+.mn-resume img {
+  height: auto;
+}
+
+/* Flexible containers */
+.mn-resume .container {
+  width: min(1180px, 92%);
+  max-width: 100%;
+  margin-inline: auto;
+}
+
+/* Prevent long text, URLs and code-like content from breaking layout */
+.mn-resume p,
+.mn-resume h1,
+.mn-resume h2,
+.mn-resume h3,
+.mn-resume h4,
+.mn-resume strong,
+.mn-resume span,
+.mn-resume a {
+  overflow-wrap: anywhere;
+}
+
+/* Better responsive typography */
+.mn-resume h1 {
+  font-size: clamp(2.2rem, 6vw, 5rem);
+}
+
+.mn-resume .section-title {
+  font-size: clamp(1.65rem, 4vw, 2.6rem);
+}
+
+/* Flexible grids */
+.mn-resume .hero-grid {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+}
+
+.mn-resume .about-grid {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+}
+
+.mn-resume .contact-grid {
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+}
+
+.mn-resume .project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mn-resume .interest-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mn-resume .skills-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mn-resume .stats {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Buttons stay inside viewport */
+.mn-resume .btn,
+.mn-resume button {
+  max-width: 100%;
+}
+
+.mn-resume .hero-actions,
+.mn-resume .social-buttons,
+.mn-resume .contact-social {
+  min-width: 0;
+}
+
+.mn-resume .social-btn {
+  max-width: 100%;
+}
+
+/* =========================
+   TABLET — 901px to 1100px
+   ========================= */
+@media (max-width: 1100px) {
+  .mn-resume .container {
+    width: 94%;
+  }
+
+  .mn-resume .nav-links {
+    gap: 18px;
+  }
+
+  .mn-resume .hero-grid {
+    gap: 30px;
+  }
+
+  .mn-resume .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mn-resume .interest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   TABLET / SMALL LAPTOP
+   ========================= */
+@media (max-width: 900px) {
+  .mn-resume .nav {
+    height: 68px;
+  }
+
+  .mn-resume .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    width: 100%;
+    padding: 18px 5%;
+    background: rgba(2, 6, 17, .97);
+    border-bottom: 1px solid rgba(0, 234, 255, .18);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .mn-resume .nav-links.open {
+    display: flex;
+  }
+
+  .mn-resume .nav-links a {
+    display: block;
+    padding: 12px 10px;
+  }
+
+  .mn-resume .menu-btn {
+    display: block;
+  }
+
+  .mn-resume .hero-grid,
+  .mn-resume .about-grid,
+  .mn-resume .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-resume .hero {
+    min-height: auto;
+    padding-top: 105px;
+  }
+
+  .mn-resume .profile-wrap {
+    max-width: 760px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .mn-resume .profile-card {
+    min-height: auto;
+  }
+
+  .mn-resume .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mn-resume .interest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   MOBILE — up to 620px
+   ========================= */
+@media (max-width: 620px) {
+  .mn-resume .container {
+    width: 92%;
+  }
+
+  .mn-resume section {
+    padding: 70px 0;
+  }
+
+  .mn-resume .hero {
+    padding-top: 95px;
+    padding-bottom: 60px;
+  }
+
+  .mn-resume h1 {
+    font-size: clamp(2rem, 11vw, 2.7rem);
+    letter-spacing: -1px;
+  }
+
+  .mn-resume .hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .mn-resume .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mn-resume .hero-actions .btn {
+    width: 100%;
+  }
+
+  .mn-resume .profile-top {
+    gap: 14px;
+  }
+
+  .mn-resume .profile-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .mn-resume .profile-name {
+    font-size: 1.15rem;
+  }
+
+  .mn-resume .profile-role {
+    font-size: .9rem;
+  }
+
+  .mn-resume .avatar {
+    width: 82px;
+    height: 82px;
+    font-size: 1.35rem;
+  }
+
+  .mn-resume .photo-frame {
+    width: 82px;
+    height: 82px;
+  }
+
+  .mn-resume .profile-quote {
+    margin: 25px 0 22px;
+    padding: 14px;
+    font-size: .95rem;
+  }
+
+  .mn-resume .info-grid,
+  .mn-resume .skills-grid,
+  .mn-resume .project-grid,
+  .mn-resume .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-resume .interest-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mn-resume .about-card,
+  .mn-resume .contact-card,
+  .mn-resume .skill-card,
+  .mn-resume .project,
+  .mn-resume .interest {
+    padding: 20px;
+  }
+
+  .mn-resume .social-buttons,
+  .mn-resume .contact-social {
+    gap: 8px;
+  }
+
+  .mn-resume .social-btn,
+  .mn-resume .contact-social .social-btn {
+    min-width: 0;
+    flex: 1 1 calc(50% - 8px);
+    font-size: .62rem;
+  }
+
+  .mn-resume .terminal {
+    padding: 12px;
+    font-size: .78rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .mn-resume .form input,
+  .mn-resume .form textarea {
+    font-size: 16px; /* prevents iOS Safari auto-zoom */
+  }
+
+  .mn-resume #topBtn {
+    right: 14px;
+    bottom: 14px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* =========================
+   SMALL PHONES — up to 400px
+   ========================= */
+@media (max-width: 400px) {
+  .mn-resume .container {
+    width: 94%;
+  }
+
+  .mn-resume section {
+    padding: 60px 0;
+  }
+
+  .mn-resume .hero {
+    padding-top: 90px;
+  }
+
+  .mn-resume .profile-top {
+    align-items: flex-start;
+  }
+
+  .mn-resume .avatar,
+  .mn-resume .photo-frame {
+    width: 70px;
+    height: 70px;
+  }
+
+  .mn-resume .profile-name {
+    font-size: 1rem;
+  }
+
+  .mn-resume .profile-role {
+    font-size: .78rem;
+  }
+
+  .mn-resume .interest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-resume .social-btn,
+  .mn-resume .contact-social .social-btn {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
+/* =========================
+   VERY NARROW PHONES — up to 340px
+   ========================= */
+@media (max-width: 340px) {
+  .mn-resume .container {
+    width: 95%;
+  }
+
+  .mn-resume .profile-card {
+    padding: 15px;
+  }
+
+  .mn-resume .profile-top {
+    gap: 10px;
+  }
+
+  .mn-resume .avatar,
+  .mn-resume .photo-frame {
+    width: 62px;
+    height: 62px;
+  }
+
+  .mn-resume h1 {
+    font-size: 1.85rem;
+  }
+}
+
+/* =========================
+   LANDSCAPE PHONES
+   ========================= */
+@media (max-height: 500px) and (orientation: landscape) {
+  .mn-resume .hero {
+    min-height: auto;
+    padding-top: 95px;
+    padding-bottom: 50px;
+  }
+
+  .mn-resume section {
+    padding: 55px 0;
+  }
+}
+
+/* =========================
+   TOUCH DEVICES
+   ========================= */
+@media (hover: none) and (pointer: coarse) {
+  .mn-resume a,
+  .mn-resume button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mn-resume .btn,
+  .mn-resume .menu-btn,
+  .mn-resume .social-btn {
+    min-height: 44px;
+  }
+
+  /* Disable hover-only movement on touch */
+  .mn-resume .project:hover,
+  .mn-resume .btn:hover,
+  .mn-resume .social-btn:hover {
+    transform: none;
+  }
+}
+
+/* =========================
+   REDUCED MOTION / ACCESSIBILITY
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+  .mn-resume *,
+  .mn-resume *::before,
+  .mn-resume *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================
+   PRINT
+   ========================= */
+@media print {
+  .mn-resume header,
+  .mn-resume #particles,
+  .mn-resume #topBtn,
+  .mn-resume .menu-btn {
+    display: none !important;
+  }
+
+  .mn-resume {
+    background: #fff !important;
+    color: #111 !important;
+  }
+}
+
+
+
+/* =========================================================
+   FINAL DEVICE-CENTERING / RESPONSIVE OVERRIDES
+   Keeps all content centered on desktop, tablet and mobile.
+   ========================================================= */
+
+.mn-resume,
+.mn-resume main,
+.mn-resume section,
+.mn-resume footer{
+  width:100%;
+  max-width:100%;
+}
+
+.mn-resume .container{
+  width:100%;
+  max-width:1180px;
+  margin-left:auto !important;
+  margin-right:auto !important;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+.mn-resume .hero > .container,
+.mn-resume section > .container,
+.mn-resume footer > .container{
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.mn-resume .hero-grid,
+.mn-resume .about-grid,
+.mn-resume .skills-grid,
+.mn-resume .project-grid,
+.mn-resume .contact-grid,
+.mn-resume .interest-grid{
+  width:100%;
+  max-width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.mn-resume .card,
+.mn-resume .about-card,
+.mn-resume .skill-card,
+.mn-resume .project,
+.mn-resume .contact-card,
+.mn-resume .interest,
+.mn-resume .profile-card{
+  min-width:0;
+  max-width:100%;
+}
+
+.mn-resume img,
+.mn-resume video,
+.mn-resume canvas,
+.mn-resume iframe{
+  max-width:100%;
+}
+
+.mn-resume input,
+.mn-resume textarea,
+.mn-resume select,
+.mn-resume button{
+  max-width:100%;
+}
+
+.mn-resume .hero p,
+.mn-resume .section-desc{
+  width:100%;
+}
+
+.mn-resume .hero-actions,
+.mn-resume .social-buttons,
+.mn-resume .contact-social{
+  justify-content:flex-start;
+}
+
+.mn-resume footer{
+  text-align:center;
+}
+
+@media (max-width:1100px){
+  .mn-resume .container{
+    max-width:960px;
+  }
+
+  .mn-resume .hero-grid{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:30px;
+  }
+
+  .mn-resume .project-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:900px){
+  .mn-resume .container{
+    max-width:760px;
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .mn-resume .hero{
+    min-height:auto;
+    padding-top:120px;
+    padding-bottom:70px;
+  }
+
+  .mn-resume .hero-grid,
+  .mn-resume .about-grid,
+  .mn-resume .contact-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+  .mn-resume .hero-content{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .mn-resume .hero p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .mn-resume .hero-actions{
+    justify-content:center;
+  }
+
+  .mn-resume .terminal{
+    width:100%;
+    text-align:left;
+  }
+
+  .mn-resume .profile-wrap{
+    width:100%;
+    max-width:620px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .mn-resume .profile-card{
+    width:100%;
+  }
+
+  .mn-resume .section-head{
+    text-align:center;
+  }
+
+  .mn-resume .section-desc{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .mn-resume .skills-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+  .mn-resume .project-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .mn-resume .contact-grid{
+    width:100%;
+  }
+}
+
+@media (max-width:620px){
+  .mn-resume .container{
+    width:100%;
+    max-width:100%;
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .mn-resume section{
+    padding-top:70px;
+    padding-bottom:70px;
+  }
+
+  .mn-resume .hero{
+    padding-top:105px;
+    padding-bottom:55px;
+  }
+
+  .mn-resume h1{
+    font-size:clamp(2rem,11vw,3.2rem);
+    letter-spacing:-1px;
+    overflow-wrap:anywhere;
+  }
+
+  .mn-resume .hero p{
+    font-size:1rem;
+    line-height:1.6;
+  }
+
+  .mn-resume .hero-actions{
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .mn-resume .hero-actions .btn{
+    width:100%;
+  }
+
+  .mn-resume .terminal{
+    font-size:.78rem;
+    padding:13px;
+    overflow-x:auto;
+    white-space:normal;
+    overflow-wrap:anywhere;
+  }
+
+  .mn-resume .profile-wrap{
+    max-width:100%;
+  }
+
+  .mn-resume .profile-card{
+    padding:20px;
+    min-height:auto;
+  }
+
+  .mn-resume .profile-top{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .mn-resume .profile-quote{
+    margin:25px 0 20px;
+  }
+
+  .mn-resume .info-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+  .mn-resume .stats{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .mn-resume .project-grid,
+  .mn-resume .interest-grid{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+  .mn-resume .about-card,
+  .mn-resume .skill-card,
+  .mn-resume .project,
+  .mn-resume .contact-card,
+  .mn-resume .interest{
+    width:100%;
+    padding:20px;
+  }
+
+  .mn-resume .contact-social{
+    flex-direction:column;
+  }
+
+  .mn-resume .contact-social .social-btn,
+  .mn-resume .social-btn{
+    width:100%;
+    min-width:0;
+  }
+
+  .mn-resume .contact-row{
+    min-width:0;
+  }
+
+  .mn-resume .contact-row strong,
+  .mn-resume .contact-row a{
+    overflow-wrap:anywhere;
+    word-break:break-word;
+  }
+
+  .mn-resume .form input,
+  .mn-resume .form textarea,
+  .mn-resume .form button{
+    width:100%;
+  }
+
+  .mn-resume footer .container{
+    font-size:.8rem;
+    overflow-wrap:anywhere;
+  }
+}
+
+@media (max-width:400px){
+  .mn-resume .container{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .mn-resume .stats{
+    grid-template-columns:minmax(0,1fr);
+  }
+
+  .mn-resume .profile-card{
+    padding:16px;
+  }
+
+  .mn-resume .section-title{
+    font-size:1.55rem;
+  }
+
+  .mn-resume .logo{
+    font-size:.95rem;
+  }
+}
+
+@media (max-width:340px){
+  .mn-resume .container{
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .mn-resume h1{
+    font-size:1.8rem;
+  }
+
+  .mn-resume .profile-card{
+    padding:13px;
+  }
+}
+
+@media (orientation:landscape) and (max-height:600px){
+  .mn-resume .hero{
+    padding-top:100px;
+    min-height:auto;
+  }
+}
+
+
+/* ============================================================
+   FINAL RESPONSIVE CENTERING / OVERFLOW PATCH
+   ============================================================ */
+.mn-resume,
+.mn-resume *,
+.mn-resume *::before,
+.mn-resume *::after { box-sizing:border-box; }
+
+.mn-resume {
+  width:100%;
+  max-width:100%;
+  margin:0;
+  overflow-x:hidden;
+}
+
+.mn-resume .container {
+  width:100%;
+  max-width:1180px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:24px;
+  padding-right:24px;
+  min-width:0;
+}
+
+.mn-resume main,
+.mn-resume section,
+.mn-resume header,
+.mn-resume footer,
+.mn-resume .hero,
+.mn-resume .hero-grid,
+.mn-resume .about-grid,
+.mn-resume .skills-grid,
+.mn-resume .project-grid,
+.mn-resume .contact-grid,
+.mn-resume .interest-grid,
+.mn-resume .info-grid,
+.mn-resume .stats { min-width:0; max-width:100%; }
+
+.mn-resume img,
+.mn-resume video,
+.mn-resume canvas,
+.mn-resume iframe { max-width:100%; }
+
+.mn-resume .hero-grid,
+.mn-resume .about-grid,
+.mn-resume .skills-grid,
+.mn-resume .project-grid,
+.mn-resume .contact-grid,
+.mn-resume .interest-grid { width:100%; }
+
+.mn-resume .hero-grid > *,
+.mn-resume .about-grid > *,
+.mn-resume .skills-grid > *,
+.mn-resume .project-grid > *,
+.mn-resume .contact-grid > *,
+.mn-resume .interest-grid > *,
+.mn-resume .info-grid > *,
+.mn-resume .stats > * { min-width:0; }
+
+.mn-resume .profile-wrap,
+.mn-resume .profile-card,
+.mn-resume .about-card,
+.mn-resume .skill-card,
+.mn-resume .project,
+.mn-resume .interest,
+.mn-resume .contact-card { max-width:100%; }
+
+.mn-resume .profile-card,
+.mn-resume .card { overflow-wrap:anywhere; }
+
+.mn-resume .profile-top,
+.mn-resume .social-buttons,
+.mn-resume .contact-social { min-width:0; max-width:100%; }
+
+.mn-resume .profile-top > * { min-width:0; }
+.mn-resume .profile-name,
+.mn-resume .profile-role,
+.mn-resume .badge,
+.mn-resume .profile-quote,
+.mn-resume .info strong,
+.mn-resume .skill-head,
+.mn-resume .project h3,
+.mn-resume .project p,
+.mn-resume .contact-row { overflow-wrap:anywhere; }
+
+.mn-resume .nav { min-height:74px; }
+.mn-resume .nav-links { min-width:0; }
+.mn-resume .menu-btn { flex:0 0 auto; }
+
+.mn-resume .hero { width:100%; }
+.mn-resume .hero-grid { align-items:center; }
+.mn-resume .hero-grid > .reveal { min-width:0; }
+.mn-resume .hero p { max-width:650px; }
+.mn-resume .terminal { max-width:100%; overflow-wrap:anywhere; word-break:break-word; }
+
+.mn-resume .photo-frame { flex:0 0 auto; overflow:hidden; }
+.mn-resume .photo-frame img { width:100%; height:100%; object-fit:cover; }
+
+.mn-resume .social-buttons,
+.mn-resume .contact-social { display:flex; flex-wrap:wrap; }
+.mn-resume .social-btn { min-width:0; max-width:100%; overflow-wrap:anywhere; }
+
+.mn-resume .form input,
+.mn-resume .form textarea,
+.mn-resume .form button { max-width:100%; }
+
+.mn-resume footer { width:100%; }
+
+@media (max-width:1100px) {
+  .mn-resume .container { max-width:960px; padding-left:20px; padding-right:20px; }
+  .mn-resume .hero-grid { gap:28px; }
+}
+
+@media (max-width:900px) {
+  .mn-resume .container { max-width:760px; padding-left:18px; padding-right:18px; }
+  .mn-resume .hero-grid,
+  .mn-resume .about-grid,
+  .mn-resume .contact-grid { grid-template-columns:minmax(0,1fr); }
+  .mn-resume .hero-grid { justify-items:center; text-align:center; }
+  .mn-resume .hero-grid > .reveal { width:100%; }
+  .mn-resume .hero p { margin-left:auto; margin-right:auto; }
+  .mn-resume .hero-actions { justify-content:center; }
+  .mn-resume .profile-wrap { width:100%; max-width:620px; margin-left:auto; margin-right:auto; }
+  .mn-resume .profile-card { width:100%; }
+  .mn-resume .section-head { text-align:center; }
+  .mn-resume .section-desc { margin-left:auto; margin-right:auto; }
+  .mn-resume .skills-grid { grid-template-columns:minmax(0,1fr); }
+  .mn-resume .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .mn-resume .contact-grid { width:100%; }
+}
+
+@media (max-width:620px) {
+  .mn-resume .container { width:100%; max-width:100%; padding-left:14px; padding-right:14px; }
+  .mn-resume section { padding-top:70px; padding-bottom:70px; }
+  .mn-resume .hero { padding-top:105px; padding-bottom:55px; }
+  .mn-resume h1 { font-size:clamp(2rem,11vw,3.2rem); letter-spacing:-1px; overflow-wrap:anywhere; }
+  .mn-resume .hero p { font-size:1rem; line-height:1.6; }
+  .mn-resume .hero-actions { width:100%; flex-direction:column; align-items:stretch; }
+  .mn-resume .hero-actions .btn { width:100%; }
+  .mn-resume .terminal { width:100%; font-size:.78rem; padding:13px; white-space:normal; }
+  .mn-resume .profile-wrap { width:100%; max-width:100%; }
+  .mn-resume .profile-card { width:100%; padding:20px; min-height:auto; }
+  .mn-resume .profile-top { flex-direction:column; align-items:center; text-align:center; }
+  .mn-resume .info-grid { grid-template-columns:minmax(0,1fr); }
+  .mn-resume .stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .mn-resume .project-grid,
+  .mn-resume .interest-grid { grid-template-columns:minmax(0,1fr); }
+  .mn-resume .about-card,
+  .mn-resume .skill-card,
+  .mn-resume .project,
+  .mn-resume .contact-card,
+  .mn-resume .interest { width:100%; padding:20px; }
+  .mn-resume .contact-social,
+  .mn-resume .social-buttons { flex-direction:column; }
+  .mn-resume .contact-social .social-btn,
+  .mn-resume .social-btn { width:100%; min-width:0; }
+  .mn-resume .contact-row { min-width:0; }
+  .mn-resume .form input,
+  .mn-resume .form textarea,
+  .mn-resume .form button { width:100%; min-width:0; }
+}
+
+@media (max-width:400px) {
+  .mn-resume .container { padding-left:12px; padding-right:12px; }
+  .mn-resume .stats { grid-template-columns:minmax(0,1fr); }
+  .mn-resume .profile-card { padding:16px; }
+  .mn-resume .section-title { font-size:1.55rem; }
+}
+
+@media (max-width:340px) {
+  .mn-resume .container { padding-left:10px; padding-right:10px; }
+  .mn-resume h1 { font-size:1.8rem; }
+  .mn-resume .profile-card { padding:13px; }
+}
+
+@media (orientation:landscape) and (max-height:600px) {
+  .mn-resume .hero { padding-top:100px; min-height:auto; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .mn-resume *, .mn-resume *::before, .mn-resume *::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+
+/* ===== MAILTO CONTACT FORM ===== */
+.mn-contact-form {
+  width: min(100%, 760px);
+  margin-inline: auto;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.mn-contact-form label {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.mn-contact-form input,
+.mn-contact-form textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+.mn-contact-form textarea {
+  resize: vertical;
+}
+
+.mn-contact-form button {
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 11px 20px;
+  cursor: pointer;
+}
+
+.contact-status {
+  min-height: 1.3em;
+  overflow-wrap: anywhere;
+}
+
+/* Mailto contact helper */
+.contact-help {
+  display: block;
+  margin-top: 4px;
+  opacity: .75;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
