@@ -1248,3 +1248,111 @@
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
+
+
+/* =========================================================
+   MANAS FUTURISTIC BLUE FACE-SCAN LOADER — 10 SECONDS
+   ========================================================= */
+#mn-future-loader{
+  position:fixed;inset:0;z-index:999999;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:#01050c;color:#fff;
+  font-family:Orbitron,Rajdhani,system-ui,sans-serif;
+  transition:opacity 1s ease,visibility 1s ease;
+}
+#mn-future-loader.mnfl-hide{opacity:0;visibility:hidden;pointer-events:none}
+.mnfl-grid{
+  position:absolute;inset:-20%;
+  background-image:
+    linear-gradient(rgba(0,145,255,.13) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,145,255,.13) 1px,transparent 1px);
+  background-size:50px 50px;
+  transform:perspective(520px) rotateX(60deg) scale(1.5);
+  transform-origin:center bottom;
+  animation:mnflGrid 8s linear infinite;
+}
+@keyframes mnflGrid{to{background-position:0 50px}}
+.mnfl-glow{
+  position:absolute;width:440px;height:440px;border-radius:50%;
+  background:#0077ff;filter:blur(150px);opacity:.12;
+  animation:mnflGlow 3s ease-in-out infinite;
+}
+@keyframes mnflGlow{50%{transform:scale(1.16);opacity:.20}}
+.mnfl-particles{position:absolute;inset:0;pointer-events:none}
+.mnfl-particle{
+  position:absolute;width:2px;height:2px;border-radius:50%;
+  background:#00bfff;box-shadow:0 0 8px #008cff;
+  animation:mnflFloat linear infinite;
+}
+@keyframes mnflFloat{from{transform:translateY(110vh)}to{transform:translateY(-20vh)}}
+.mnfl-scanner{
+  position:relative;width:min(390px,78vw);aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+}
+.mnfl-ring{
+  position:absolute;border-radius:50%;
+  border:1px solid rgba(0,174,255,.45);
+  box-shadow:0 0 15px rgba(0,136,255,.15),inset 0 0 15px rgba(0,136,255,.08);
+}
+.mnfl-ring-a{width:100%;height:100%;border-top-color:#00bfff;border-bottom-color:transparent;animation:mnflCW 8s linear infinite}
+.mnfl-ring-b{width:88%;height:88%;border-left-color:#008cff;border-right-color:transparent;animation:mnflCCW 5s linear infinite}
+.mnfl-ring-c{width:76%;height:76%;border-style:dashed;border-top-color:#00d9ff;animation:mnflCW 12s linear infinite}
+@keyframes mnflCW{to{transform:rotate(360deg)}}
+@keyframes mnflCCW{to{transform:rotate(-360deg)}}
+.mnfl-photo{
+  position:relative;width:58%;height:70%;overflow:hidden;border-radius:18px;
+  border:1px solid rgba(0,174,255,.48);background:#061426;
+  box-shadow:0 0 30px rgba(0,145,255,.30),inset 0 0 30px rgba(0,132,255,.10);
+}
+.mnfl-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.82) contrast(1.10) saturate(.85)}
+.mnfl-photo-glow{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(0,119,255,.20));pointer-events:none}
+.mnfl-scan-line{
+  position:absolute;left:-10%;width:120%;height:3px;top:0;
+  background:#00d9ff;
+  box-shadow:0 0 8px #00d9ff,0 0 20px #008cff,0 0 35px #0077ff;
+  animation:mnflScan 2.4s ease-in-out infinite;
+}
+@keyframes mnflScan{0%{top:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+.mnfl-corner{
+  position:absolute;width:36px;height:36px;border-color:#00bfff;
+  filter:drop-shadow(0 0 5px #008cff);
+}
+.mnfl-tl{top:8%;left:8%;border-top:2px solid;border-left:2px solid}
+.mnfl-tr{top:8%;right:8%;border-top:2px solid;border-right:2px solid}
+.mnfl-bl{bottom:8%;left:8%;border-bottom:2px solid;border-left:2px solid}
+.mnfl-br{bottom:8%;right:8%;border-bottom:2px solid;border-right:2px solid}
+.mnfl-target{
+  position:absolute;width:7px;height:7px;border-radius:50%;
+  background:#00d9ff;box-shadow:0 0 6px #00d9ff,0 0 15px #0077ff;
+  animation:mnflTarget 1.5s ease-in-out infinite;
+}
+.mnfl-p1{top:18%;left:16%}.mnfl-p2{top:35%;right:14%}
+.mnfl-p3{bottom:25%;left:12%}.mnfl-p4{bottom:15%;right:20%}
+@keyframes mnflTarget{50%{transform:scale(1.5);opacity:1}0%,100%{transform:scale(.7);opacity:.45}}
+.mnfl-welcome{
+  position:absolute;top:7%;text-align:center;opacity:0;
+  animation:mnflWelcome 1s ease forwards;animation-delay:5.8s;
+  color:#68cfff;letter-spacing:6px;font-size:11px;text-shadow:0 0 10px #008cff;
+}
+.mnfl-welcome strong{
+  display:block;min-height:42px;margin-top:8px;
+  font-size:clamp(24px,5vw,38px);letter-spacing:4px;color:#fff;
+  text-shadow:0 0 8px #00bfff,0 0 25px #0077ff;
+}
+.mnfl-welcome strong::after{content:"|";color:#00d9ff;animation:mnflCursor .7s infinite}
+@keyframes mnflWelcome{to{opacity:1}}@keyframes mnflCursor{50%{opacity:0}}
+.mnfl-status{
+  position:absolute;bottom:8%;width:min(450px,85vw);text-align:center;
+  font-size:11px;letter-spacing:3px;color:#00bfff;text-shadow:0 0 8px #008cff;
+}
+.mnfl-status-line{display:flex;justify-content:center;align-items:center;gap:9px}
+.mnfl-dot{width:7px;height:7px;border-radius:50%;background:#00d9ff;box-shadow:0 0 7px #00d9ff,0 0 15px #008cff;animation:mnflBlink .8s infinite}
+@keyframes mnflBlink{50%{opacity:.2}}
+.mnfl-progress{height:2px;margin-top:14px;background:rgba(0,132,255,.12);overflow:hidden}
+.mnfl-progress span{display:block;width:0;height:100%;background:#00bfff;box-shadow:0 0 10px #00bfff,0 0 20px #0077ff;animation:mnflProgress 10s linear forwards}
+@keyframes mnflProgress{to{width:100%}}
+.mnfl-data{display:flex;justify-content:space-between;margin-top:10px;color:rgba(90,180,255,.55);font-size:7px;letter-spacing:1px}
+@media(max-width:700px){
+  .mnfl-scanner{width:300px}.mnfl-status{bottom:6%}
+  .mnfl-data{font-size:6px}.mnfl-welcome strong{font-size:22px}
+}
