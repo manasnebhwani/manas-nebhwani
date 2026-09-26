@@ -214,3 +214,260 @@
 .mn-resume header{position:sticky;top:0}
 .mn-resume .hero{min-height:calc(100vh - 74px)}
 .mn-resume .nav-links{z-index:20}
+/* =========================================
+   RESPONSIVE DESIGN
+   Mobile → Tablet → Laptop → Desktop
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Images never overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Videos / iframes */
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Containers */
+.container,
+section,
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Flexible text */
+h1 {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(1.6rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
+p {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.7;
+}
+
+/* Flexible navigation */
+nav,
+.navbar,
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Flexible grids */
+.grid,
+.cards,
+.projects,
+.skills,
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Buttons */
+button,
+.btn,
+a.button {
+    max-width: 100%;
+    min-height: 44px;
+}
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .container,
+    section,
+    main {
+        width: 92%;
+    }
+
+    nav,
+    .navbar,
+    .nav-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .grid,
+    .cards,
+    .projects,
+    .skills,
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 80px 20px;
+    }
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .container,
+    section,
+    main {
+        width: 92%;
+    }
+
+    .grid,
+    .cards,
+    .projects,
+    .skills,
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 15px;
+        text-align: center;
+    }
+
+    .hero img {
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .buttons,
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .buttons a,
+    .hero-buttons a,
+    button {
+        width: 100%;
+    }
+
+    nav ul,
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .container,
+    section,
+    main {
+        width: 94%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+
+    .hero {
+        padding: 45px 10px;
+    }
+}
+
+/* =========================================
+   TOUCH DEVICES
+   ========================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    a,
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* =========================================
+   LANDSCAPE MOBILE
+   ========================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .hero {
+        padding: 40px 20px;
+    }
+}
+
+/* =========================================
+   REDUCE ANIMATIONS
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
