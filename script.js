@@ -189,3 +189,61 @@
 })();
 
 
+
+
+/* =========================================================
+   MANAS FUTURISTIC BLUE FACE-SCAN LOADER — 10 SECONDS
+   ========================================================= */
+(() => {
+  const loader = document.getElementById('mn-future-loader');
+  if (!loader) return;
+
+  const status = document.getElementById('mnflStatus');
+  const nameEl = document.getElementById('mnflName');
+  const particles = document.getElementById('mnflParticles');
+
+  document.body.style.overflow = 'hidden';
+
+  // Floating neon particles
+  for (let i = 0; i < 65; i++) {
+    const p = document.createElement('span');
+    p.className = 'mnfl-particle';
+    p.style.left = `${Math.random() * 100}%`;
+    p.style.animationDuration = `${5 + Math.random() * 10}s`;
+    p.style.animationDelay = `${Math.random() * 8}s`;
+    const size = 1 + Math.random() * 2.5;
+    p.style.width = `${size}px`;
+    p.style.height = `${size}px`;
+    particles.appendChild(p);
+  }
+
+  const messages = [
+    [0, 'INITIALIZING SYSTEM...'],
+    [1800, 'SCANNING FACE...'],
+    [3600, 'ANALYZING BIOMETRIC DATA...'],
+    [5200, 'IDENTITY VERIFIED ✓']
+  ];
+
+  messages.forEach(([time, message]) => {
+    setTimeout(() => {
+      status.textContent = message;
+    }, time);
+  });
+
+  // Type the name near the end of the intro.
+  const name = 'MANAS NEBHWANI';
+  let i = 0;
+  setTimeout(() => {
+    const typing = setInterval(() => {
+      nameEl.textContent = name.slice(0, ++i);
+      if (i >= name.length) clearInterval(typing);
+    }, 120);
+  }, 6500);
+
+  // EXACTLY 10 SECONDS
+  setTimeout(() => {
+    loader.classList.add('mnfl-hide');
+    document.body.style.overflow = '';
+    setTimeout(() => loader.remove(), 1100);
+  }, 10000);
+})();
